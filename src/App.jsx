@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import BackToTop from './components/BackToTop';
 import { projects } from './data/projects';
 import { experience } from './data/experience';
 import { skills } from './data/skills';
@@ -70,6 +71,7 @@ const Portfolio = () => {
       <Skills skills={skills} />
       <Contact />
       <Footer />
+      <BackToTop />
     </div>
   );
 };

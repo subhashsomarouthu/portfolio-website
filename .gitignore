@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+/public/profile_photo.png
+/public/subhashsomarouthu_resume.pdf
