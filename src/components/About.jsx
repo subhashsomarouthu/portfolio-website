@@ -35,10 +35,10 @@ const About = () => {
         <ScrollReveal>
           <div className="bg-gradient-to-br from-slate-900/60 to-purple-900/30 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/20">
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              I'm a <span className="text-purple-400 font-semibold">Data Analyst and Data Scientist</span> with 2+ years of experience transforming complex data into actionable insights that drive business growth. My expertise spans <span className="text-cyan-400 font-semibold">data analysis, machine learning, ETL pipelines, and business intelligence</span>, with a proven track record of delivering measurable results across finance, education, and telecommunications.
+              I'm a <span className="text-purple-400 font-semibold">Data Analyst</span> with 2+ years of experience transforming complex data into actionable insights that drive business growth. My work spans the full data lifecycle — from <span className="text-cyan-400 font-semibold">building ETL pipelines and data models</span> to <span className="text-cyan-400 font-semibold">developing machine learning solutions and interactive dashboards</span> — giving me a unique ability to bridge the gap between raw data and strategic decisions.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              From analyzing 20+ datasets with 15% higher accuracy at Quinte Financial Technologies to processing 100k+ records and improving campaign targeting by 20% at AlmaBetter, I specialize in creating <span className="text-purple-400 font-semibold">data-driven solutions</span> that make a real impact. With certifications from IBM and AlmaBetter, I'm seeking opportunities to leverage my skills in advanced analytics, machine learning, and cloud-based systems to solve challenging business problems.
+              From analyzing 20+ datasets with 15% higher accuracy at Quinte Financial Technologies to processing 100k+ records and improving campaign targeting by 20% at AlmaBetter, I deliver <span className="text-purple-400 font-semibold">data-driven solutions</span> that make a measurable impact. With expertise in <span className="text-cyan-400 font-semibold">Python, SQL, machine learning, NLP, and cloud-based systems</span>, I'm seeking opportunities where analytical rigor meets engineering excellence.
             </p>
           </div>
         </ScrollReveal>

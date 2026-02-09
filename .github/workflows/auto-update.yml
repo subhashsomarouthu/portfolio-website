@@ -1,0 +1,51 @@
+name: Auto-update portfolio
+
+on:
+  schedule:
+    # Runs every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Manual trigger option
+
+jobs:
+  check-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch current repos from GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+        run: node scripts/fetch-repos.js
+
+      - name: Check if repos changed
+        id: check
+        run: |
+          if git diff --quiet src/data/repos.json 2>/dev/null; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit updated repos
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/repos.json
+          git commit -m "chore: auto-update repo list"
+          git push
+
+      - name: Trigger Vercel deploy
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          if [ -n "${{ secrets.VERCEL_DEPLOY_HOOK }}" ]; then
+            curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
+            echo "Triggered Vercel deploy"
+          else
+            echo "No VERCEL_DEPLOY_HOOK secret set — skipping deploy trigger"
+          fi
