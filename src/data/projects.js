@@ -10,7 +10,7 @@ export const projects = [
     tech: ["Python", "FastAPI", "Next.js", "Docker", "PostgreSQL", "Redis", "Caddy", "Azure", "GitHub Actions", "LLMs", "NLP", "Whisper", "Pyannote", "YOLO", "LIME"],
     metrics: { services: "10+", signals: "Multi-modal", deployment: "Production" },
     website: "https://skill-screen.com",
-    previewVideo: "/projects/skillscreen_demo_voice.mp4",
+    image: "https://i.ytimg.com/vi/nrT8mWPDe04/hqdefault.jpg",
     demoVideo: "https://youtu.be/nrT8mWPDe04",
     github: "https://github.com/subhashsomarouthu/SkillScreen"
   },
