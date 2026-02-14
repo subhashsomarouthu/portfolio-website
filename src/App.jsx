@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 import { projects } from './data/projects';
+import autoProjects from './data/auto-projects.json';
 import { experience } from './data/experience';
 import { skills } from './data/skills';
 import { education } from './data/education';
@@ -16,6 +17,14 @@ import { education } from './data/education';
 const SECTIONS = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
 
 const Portfolio = () => {
+  const manualGithub = new Set(projects.map(p => p.github).filter(Boolean));
+  const manualTitles = new Set(projects.map(p => p.title.toLowerCase()));
+  const autoDeduped = (autoProjects || []).filter(p =>
+    (!p.github || !manualGithub.has(p.github)) &&
+    (!p.title || !manualTitles.has(p.title.toLowerCase()))
+  );
+  const mergedProjects = [...projects, ...autoDeduped];
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -67,7 +76,7 @@ const Portfolio = () => {
       <Hero scrollToSection={scrollToSection} />
       <About />
       <Experience experience={experience} education={education} />
-      <Projects projects={projects} />
+      <Projects projects={mergedProjects} />
       <Skills skills={skills} />
       <Contact />
       <Footer />

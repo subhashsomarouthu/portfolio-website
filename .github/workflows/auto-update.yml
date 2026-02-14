@@ -2,9 +2,12 @@ name: Auto-update portfolio
 
 on:
   schedule:
-    # Runs every 6 hours
-    - cron: '0 */6 * * *'
+    # Runs weekly (Mon 09:00 UTC)
+    - cron: '0 9 * * 1'
   workflow_dispatch: # Manual trigger option
+
+permissions:
+  contents: write
 
 jobs:
   check-and-deploy:
@@ -20,6 +23,7 @@ jobs:
       - name: Fetch current repos from GitHub API
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          PORTFOLIO_TOPIC: portfolio
         run: node scripts/fetch-repos.js
 
       - name: Check if repos changed
@@ -39,13 +43,3 @@ jobs:
           git add src/data/repos.json
           git commit -m "chore: auto-update repo list"
           git push
-
-      - name: Trigger Vercel deploy
-        if: steps.check.outputs.changed == 'true'
-        run: |
-          if [ -n "${{ secrets.VERCEL_DEPLOY_HOOK }}" ]; then
-            curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
-            echo "Triggered Vercel deploy"
-          else
-            echo "No VERCEL_DEPLOY_HOOK secret set — skipping deploy trigger"
-          fi
