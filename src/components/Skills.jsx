@@ -6,24 +6,32 @@ const certifications = [
     title: "IBM Data Science Specialization",
     issuer: "IBM via Coursera",
     description: "End-to-end data science workflows, Python, SQL, ML modeling",
+    link: "/certificates/IBM_datasciecne.pdf",
+    thumbnail: "/certificates/IBM_datasciecne.jpg",
     color: "purple",
   },
   {
     title: "Full Stack Data Science Program",
     issuer: "AlmaBetter",
     description: "Data preprocessing, ML, model evaluation & deployment",
+    link: "/certificates/almabetter.pdf",
+    thumbnail: "/certificates/almabetter.jpg",
     color: "cyan",
   },
   {
     title: "Python (Basic)",
     issuer: "HackerRank",
     description: "Core Python programming, data structures, algorithms",
+    link: "/certificates/python_basic%20certificate.pdf",
+    thumbnail: "/certificates/python_basic%20certificate.jpg",
     color: "green",
   },
   {
     title: "SQL (Advanced)",
     issuer: "HackerRank",
     description: "Complex queries, window functions, optimization",
+    link: "/certificates/sql_advanced%20certificate.pdf",
+    thumbnail: "/certificates/sql_advanced%20certificate.jpg",
     color: "yellow",
   },
 ];
@@ -72,22 +80,48 @@ const Skills = ({ skills }) => {
           <ScrollReveal>
             <h3 className="text-3xl font-bold text-center mb-8 text-cyan-400">Certifications</h3>
           </ScrollReveal>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {certifications.map((cert, index) => {
               const colors = colorMap[cert.color];
               return (
                 <ScrollReveal key={cert.title} delay={index * 100}>
-                  <div className={`bg-slate-800/50 p-5 rounded-xl border ${colors.border} hover:scale-[1.02] transition-all`}>
+                  <div className={`bg-slate-800/50 p-4 rounded-xl border ${colors.border} hover:scale-[1.02] transition-all`}>
                     <div className="flex items-center gap-3 mb-2">
                       <div className={`${colors.bg} p-2 rounded-lg`}>
                         <Award className={colors.icon} size={24} />
                       </div>
                       <div>
-                        <span className="text-white font-semibold block">{cert.title}</span>
+                        <span className="text-white font-semibold block text-sm">{cert.title}</span>
                         <span className="text-xs text-gray-400">{cert.issuer}</span>
                       </div>
                     </div>
-                    <p className="text-sm text-gray-400 ml-12">{cert.description}</p>
+                    <p className="text-xs text-gray-400 ml-12 line-clamp-2">{cert.description}</p>
+                    {(cert.link || cert.thumbnail) && (
+                      <div className="ml-12 mt-3 space-y-2">
+                        <div className="rounded-lg overflow-hidden border border-cyan-500/20 bg-slate-900/40 aspect-[4/3]">
+                          {cert.thumbnail ? (
+                            <img
+                              src={cert.thumbnail}
+                              alt={`${cert.title} certificate preview`}
+                              className="w-full h-full object-cover"
+                              loading="lazy"
+                            />
+                          ) : (
+                            <div className="p-3 text-xs text-gray-400">Preview not available</div>
+                          )}
+                        </div>
+                        {cert.link && (
+                          <a
+                            href={cert.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[11px] text-cyan-300 hover:text-cyan-200 underline"
+                          >
+                            Open certificate
+                          </a>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </ScrollReveal>
               );

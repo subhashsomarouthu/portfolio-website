@@ -1,5 +1,5 @@
-import { X, ExternalLink } from 'lucide-react';
-import { useEffect } from 'react';
+import { X, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 const ProjectModal = ({ project, onClose }) => {
   useEffect(() => {
@@ -13,6 +13,22 @@ const ProjectModal = ({ project, onClose }) => {
   }, [onClose]);
 
   if (!project) return null;
+  const images = project.images?.length ? project.images : (project.image ? [project.image] : []);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [project?.title]);
+
+  const nextImage = () => {
+    if (!images.length) return;
+    setActiveIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    if (!images.length) return;
+    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
 
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" onClick={onClose}>
@@ -35,6 +51,51 @@ const ProjectModal = ({ project, onClose }) => {
         </div>
 
         <div className="p-6 space-y-6">
+          {/* Image Carousel */}
+          {images.length > 0 && (
+            <div className="space-y-3">
+              <div className="relative rounded-2xl overflow-hidden border border-purple-500/20 bg-slate-900/60">
+                <img
+                  src={images[activeIndex]}
+                  alt={`${project.title} ${activeIndex + 1}`}
+                  className="w-full h-64 md:h-80 object-cover"
+                />
+                {images.length > 1 && (
+                  <>
+                    <button
+                      onClick={prevImage}
+                      className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition"
+                      aria-label="Previous image"
+                    >
+                      <ChevronLeft size={20} />
+                    </button>
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition"
+                      aria-label="Next image"
+                    >
+                      <ChevronRight size={20} />
+                    </button>
+                  </>
+                )}
+              </div>
+              {images.length > 1 && (
+                <div className="flex gap-2 overflow-x-auto">
+                  {images.map((src, idx) => (
+                    <button
+                      key={src}
+                      onClick={() => setActiveIndex(idx)}
+                      className={`h-14 w-20 rounded-lg overflow-hidden border ${idx === activeIndex ? 'border-cyan-400' : 'border-transparent'} shrink-0`}
+                      aria-label={`Select image ${idx + 1}`}
+                    >
+                      <img src={src} alt={`${project.title} thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Description */}
           {project.description && (
             <div>
@@ -88,18 +149,53 @@ const ProjectModal = ({ project, onClose }) => {
             </div>
           </div>
 
-          {/* GitHub Link */}
-          {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105"
-            >
-              <ExternalLink size={18} />
-              View on GitHub
-            </a>
-          )}
+          {/* Links */}
+          <div className="flex flex-wrap gap-3">
+            {project.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105"
+              >
+                <ExternalLink size={18} />
+                View on GitHub
+              </a>
+            )}
+            {project.website && (
+              <a
+                href={project.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-purple-500/30 rounded-lg font-semibold text-purple-300 hover:text-white hover:border-purple-400 hover:bg-white/15 transition-all transform hover:scale-105"
+              >
+                <ExternalLink size={18} />
+                Visit Website
+              </a>
+            )}
+            {project.demoVideo && (
+              <a
+                href={project.demoVideo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-cyan-500/30 rounded-lg font-semibold text-cyan-300 hover:text-white hover:border-cyan-400 hover:bg-white/15 transition-all transform hover:scale-105"
+              >
+                <ExternalLink size={18} />
+                Watch Demo
+              </a>
+            )}
+            {project.dashboard && (
+              <a
+                href={project.dashboard}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-cyan-500/30 rounded-lg font-semibold text-cyan-300 hover:text-white hover:border-cyan-400 hover:bg-white/15 transition-all transform hover:scale-105"
+              >
+                <ExternalLink size={18} />
+                View Dashboard
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

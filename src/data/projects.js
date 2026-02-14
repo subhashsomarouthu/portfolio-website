@@ -1,5 +1,20 @@
 export const projects = [
   {
+    title: "SkillScreen - AI-Powered Automated Interview Platform",
+    category: "ML / AI",
+    situation: "Recruiters need objective, multi-signal candidate evaluation beyond standard interviews",
+    task: "Build a production-ready, microservices platform for end-to-end AI interview assessment",
+    action: "Designed and implemented a Dockerized microservices stack for video, audio, text, and coding analysis with centralized orchestration and reporting",
+    result: "Live platform with multi-modal assessments and recruiter workflows",
+    description: "SkillScreen is a comprehensive, microservices-based interview assessment platform. It delivers real-time evaluation across video analysis, speech intelligence, resume/response NLP, and coding performance. Includes secure role-based access, audit logging, and ATS-ready workflows, deployed with self-hosted CI/CD to Azure.",
+    tech: ["Python", "FastAPI", "Next.js", "Docker", "PostgreSQL", "Redis", "Caddy", "Azure", "GitHub Actions", "LLMs", "NLP", "Whisper", "Pyannote", "YOLO", "LIME"],
+    metrics: { services: "10+", signals: "Multi-modal", deployment: "Production" },
+    website: "https://skill-screen.com",
+    previewVideo: "/projects/skillscreen_demo_voice.mp4",
+    demoVideo: "https://youtu.be/nrT8mWPDe04",
+    github: "https://github.com/subhashsomarouthu/SkillScreen"
+  },
+  {
     title: "Credit Card Fraud Detection",
     category: "ML / AI",
     situation: "Financial institutions lose billions annually to fraudulent transactions",
@@ -9,6 +24,7 @@ export const projects = [
     description: "Developed an end-to-end fraud detection pipeline handling highly imbalanced data. Applied SMOTE oversampling, feature engineering on transaction patterns, and compared ensemble methods. The final model processes transactions in real-time with configurable threshold tuning for precision-recall trade-offs.",
     tech: ["Python", "Scikit-learn", "SMOTE", "Random Forest", "SVM"],
     metrics: { accuracy: "84%", recall: "81%", improvement: "40%" },
+    image: "/projects/credict_card_image.avif",
     github: "https://github.com/subhashsomarouthu/Credit_Card_Default_Prediction"
   },
   {
@@ -21,6 +37,7 @@ export const projects = [
     description: "Built a time-series regression model using 15+ years of stock data. Created lag-based features, rolling averages, and volatility indicators. Compared Ridge, Random Forest, and XGBoost — XGBoost won with R\u00b2=0.95. Includes interactive visualizations of predicted vs actual prices.",
     tech: ["Python", "XGBoost", "Ridge Regression", "Random Forest"],
     metrics: { r2: "0.95", model: "XGBoost", features: "Lag-based" },
+    image: "/projects/yesbank_image.avif",
     github: "https://github.com/subhashsomarouthu/Yes_Bank_Stock_Closing_Price_Prediction"
   },
   {
@@ -33,6 +50,7 @@ export const projects = [
     description: "Analyzed customer behavior data to identify churn indicators. Performed feature selection using correlation analysis and mutual information. Built and compared Logistic Regression and SVM classifiers with hyperparameter tuning. Delivered actionable retention strategies based on high-risk customer segments.",
     tech: ["Python", "SVM", "Logistic Regression", "Feature Selection"],
     metrics: { accuracy: "88%", savings: "$500K", churn: "-12%" },
+    image: "/projects/customer_churn_image.avif",
     github: "https://github.com/subhashsomarouthu/Customer_Churn_Prediction"
   },
   {
@@ -45,18 +63,20 @@ export const projects = [
     description: "Collected and cleaned COVID-19 data across 25 regions. Performed extensive EDA to identify trends, seasonality, and anomalies. Compared Linear and Polynomial Regression models for short-term and long-term forecasting. Results were used to recommend resource allocation strategies for hospitals.",
     tech: ["Python", "Regression", "EDA", "Data Visualization"],
     metrics: { accuracy: "85%", predictions: "1000+", regions: "25" },
+    image: "/projects/covid_image.jpg",
     github: "https://github.com/subhashsomarouthu/ANALYSIS-AND-PREDICTION-OF-COVID-19_CASES-"
   },
   {
-    title: "Medical Image Classifier",
+    title: "VGG16 + Metadata for Multi-class Image Classification",
     category: "ML / AI",
-    situation: "Medical diagnosis requires interpretable AI predictions",
-    task: "Build explainable multi-class image classification model",
-    action: "VGG16 transfer learning with metadata features, explained using LIME",
-    result: "91% accuracy with full explainability - FDA approval potential",
-    description: "Implemented transfer learning using pre-trained VGG16 on medical images across 10 diagnostic categories. Augmented image features with patient metadata for improved accuracy. Applied LIME for model interpretability, making predictions transparent for medical professionals and regulatory compliance.",
-    tech: ["TensorFlow", "VGG16", "LIME", "Transfer Learning"],
-    metrics: { accuracy: "91%", classes: "10", explainability: "100%" },
+    situation: "Multi-class image classification needed to be accurate and interpretable for real-world deployment",
+    task: "Build an end-to-end, interpretable model using transfer learning and metadata",
+    action: "Fine-tuned VGG16 and fused metadata (TF-IDF captions, then interpretable image features) plus LIME explainability",
+    result: "Validation accuracy ~0.90, AUC ~0.99; Test accuracy 0.90, AUC 0.99",
+    description: "Built a data-centric multi-class image classifier (5 classes: drink, food, inside, menu, outside). Iteration 1 used VGG16 + caption TF-IDF. Iteration 2 replaced captions with interpretable image features (mean RGB, brightness, aspect ratio) for deployment without text. Used LIME to explain predictions and model behavior.",
+    tech: ["TensorFlow", "VGG16", "Transfer Learning", "LIME", "TF-IDF", "Image Features"],
+    metrics: { accuracy: "0.90", auc: "0.99", classes: "5" },
+    image: "/projects/portfolio-cover-vggimage_classification.png",
     github: "https://github.com/subhashsomarouthu/VGG16_Image_classification"
   },
   {
@@ -69,6 +89,7 @@ export const projects = [
     description: "Ingested 20 years of macroeconomic data from FRED API (interest rates, GDP, unemployment, CPI). Engineered 35+ features including lagged indicators and interaction terms. Compared Regression and Decision Tree models to predict housing price trends for investment decision-making.",
     tech: ["Python", "FRED API", "Decision Trees", "Economic Data"],
     metrics: { accuracy: "87%", years: "20", features: "35+" },
+    image: "/projects/ushouse_price_prediction_image.png",
     github: "https://github.com/subhashsomarouthu/HomeLLC_Housing_Price_Prediction"
   },
   {
@@ -81,6 +102,7 @@ export const projects = [
     description: "Built a Retrieval-Augmented Generation chatbot that indexes biomedical literature into a vector database. Uses semantic search to retrieve relevant passages, then feeds them as context to an LLM for accurate, grounded responses. Handles 10K+ queries with citation-backed answers.",
     tech: ["Python", "LangChain", "Vector DB", "OpenAI API", "RAG"],
     metrics: { accuracy: "95%", time: "-60%", queries: "10K+" },
+    image: "/projects/RAG_demo.gif",
     github: "https://github.com/subhashsomarouthu/Medical_chatbot"
   },
   {
@@ -93,6 +115,7 @@ export const projects = [
     description: "Processed Netflix's content catalog using TF-IDF on descriptions, genres, and cast data. Applied PCA for dimensionality reduction, then clustered content into 8 groups using K-Means. Built a recommendation engine that suggests similar content within and across clusters.",
     tech: ["Python", "TF-IDF", "PCA", "K-Means", "NLP"],
     metrics: { clusters: "8", accuracy: "35%", engagement: "+25%" },
+    image: "/projects/netflix_project_image.avif",
     github: "https://github.com/subhashsomarouthu/Netflix-Movies-and-TV-Shows-Clustering"
   },
   {
@@ -105,6 +128,7 @@ export const projects = [
     description: "Fine-tuned a Transformer-based model on 50K+ Yelp reviews for 5-class sentiment classification. Implemented custom tokenization, attention visualization, and handled class imbalance. The model processes reviews in real-time and provides sentiment breakdowns for business dashboards.",
     tech: ["PyTorch", "Transformers", "BERT", "NLP"],
     metrics: { accuracy: "92%", reviews: "50K+", categories: "5" },
+    image: "/projects/yelp_sentiment_image.avif",
     github: "https://github.com/subhashsomarouthu/Sentiment_Analysis_transformer"
   },
   {
@@ -117,6 +141,8 @@ export const projects = [
     description: "Designed a comprehensive Power BI dashboard analyzing 18,000+ FIFA players. Built DAX measures for player value scoring, wage analysis by position, and nationality distribution. Interactive filters enable scouts to narrow down player lists by 50% faster than manual scouting.",
     tech: ["Power BI", "DAX", "Data Modeling", "SQL"],
     metrics: { speed: "50%", insights: "1000+", teams: "12" },
+    image: "/projects/fifa_dashboard_image.png",
+    dashboard: "https://app.powerbi.com/groups/me/reports/7d1f2045-dc2b-443d-bb42-98a0056915a6/ReportSection?experience=power-bi",
     github: "https://github.com/subhashsomarouthu/FIFA18_Player_Ratings_PowerBI_Dashboard"
   },
   {
@@ -129,18 +155,21 @@ export const projects = [
     description: "Built interactive Tableau dashboards analyzing NYC Airbnb listings across 5 boroughs. Identified pricing patterns, seasonal trends, and underpriced neighborhoods. Delivered recommendations that could unlock $2M+ in revenue opportunities for hosts across 15 key neighborhoods.",
     tech: ["Tableau", "Data Analysis", "Statistical Modeling"],
     metrics: { revenue: "$2M", neighborhoods: "15", insights: "200+" },
+    image: "/projects/airbnb_dashboard_image.png",
+    dashboard: "https://public.tableau.com/app/profile/subhash.pavan.chakravarthy.somarouthu/viz/AirBnb_NYC_EDA/Dashboard1",
     github: "https://github.com/subhashsomarouthu/AirBnb-Booking-Analysis"
   },
   {
-    title: "Railway Ticket Analytics",
+    title: "Sports Event Analytics",
     category: "Data Analysis",
-    situation: "Railway company needed to optimize event planning and marketing",
-    task: "Analyze ticket sales patterns and customer behavior",
-    action: "Complex SQL queries analyzing sales data, customer segments, and trends",
-    result: "15% increase in ticket sales through targeted marketing",
-    description: "Wrote 50+ complex SQL queries to analyze ticket sales data across 100K+ customer records. Identified peak buying patterns, customer segmentation by travel frequency, and revenue trends. Recommendations led to targeted marketing campaigns that increased ticket sales by 15%.",
-    tech: ["SQL", "PostgreSQL", "Data Analysis"],
-    metrics: { sales: "+15%", queries: "50+", customers: "100K+" },
+    situation: "Event organizers needed clear insights into ticket sales, revenue, and customer behavior",
+    task: "Load event data into SQL, analyze trends, and visualize KPIs in Power BI",
+    action: "SQL-based analysis of sales, segmentation, gateways, and booking behavior; Power BI dashboards for reporting",
+    result: "Clear operational insights across pricing, demand, and customer segments",
+    description: "Built a complete analytics workflow: loaded sports event data into SQL, ran summary statistics, daily sales, customer segmentation, source contributions, payment gateway analysis, most valuable customers, preferred groups, and booking-time insights. Delivered a Power BI dashboard for stakeholders.",
+    tech: ["SQL", "Power BI", "Data Analysis"],
+    metrics: { dashboards: "Power BI", focus: "Sales + Segmentation", scope: "End-to-end" },
+    image: "/projects/customer_purchasing_pattern_sports_event_analytics_project.png",
     github: "https://github.com/subhashsomarouthu/Sports_Event_Analytics"
   },
   {
@@ -153,6 +182,7 @@ export const projects = [
     description: "Built an executive-level Excel dashboard using Power Query for data transformation and pivot tables for multi-dimensional analysis. Covered P&L performance, customer segment profitability, and regional sales trends. Enabled leadership to make data-driven decisions across multiple regions.",
     tech: ["Excel", "Power Query", "Pivot Tables", "Data Analysis"],
     metrics: { regions: "Multiple", segments: "Customer", insights: "P&L" },
+    image: "/projects/atlique_sales_image.png",
     github: "https://github.com/subhashsomarouthu/Atliq_Sales_Analytics_Excel_casestudy"
   },
   {
@@ -165,6 +195,12 @@ export const projects = [
     description: "Performed deep-dive analysis of Google Analytics data for an e-commerce site. Mapped user journeys, identified drop-off points in the conversion funnel, and ran A/B tests on landing pages. Recommendations reduced bounce rate by 40% and increased conversions by 25%, generating $150K+ in additional revenue.",
     tech: ["Google Analytics", "Data Analysis", "A/B Testing"],
     metrics: { bounce: "-40%", conversion: "+25%", revenue: "+$150K" },
+    images: [
+      "/projects/google_analytics_1.png",
+      "/projects/google_analytics_2.png",
+      "/projects/google_analytics_3.png",
+      "/projects/google_analytics_4.png"
+    ],
     github: "https://github.com/subhashsomarouthu/Google_Analytics_LookerStudio"
   }
 ];

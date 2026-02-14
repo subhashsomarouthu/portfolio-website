@@ -57,25 +57,36 @@ const Projects = ({ projects }) => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.slice(0, visibleProjects).map((project, index) => (
-            <ScrollReveal key={project.title} delay={index % 3 * 100}>
-              <div
-                onClick={() => setSelectedProject(project)}
-                className="bg-gradient-to-br from-slate-900/80 to-purple-900/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 h-full flex flex-col cursor-pointer group"
-              >
-                {/* Category placeholder icon */}
-                <div className="mb-4 h-32 rounded-xl bg-gradient-to-br from-slate-800/80 to-purple-900/30 border border-purple-500/10 flex items-center justify-center overflow-hidden">
-                  {project.image ? (
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover rounded-xl" />
-                  ) : (
-                    <div className="text-center">
-                      {project.category === 'ML / AI' && <Brain size={40} className="mx-auto text-purple-400/60 mb-1" />}
-                      {project.category === 'GenAI / NLP' && <Cpu size={40} className="mx-auto text-cyan-400/60 mb-1" />}
-                      {project.category === 'Data Analysis' && <BarChart3 size={40} className="mx-auto text-pink-400/60 mb-1" />}
-                      <p className="text-xs text-gray-500">{project.category}</p>
+              {filtered.slice(0, visibleProjects).map((project, index) => {
+                const coverImage = project.images?.[0] || project.image;
+                return (
+                <ScrollReveal key={project.title} delay={index % 3 * 100}>
+                  <div
+                    onClick={() => setSelectedProject(project)}
+                    className="bg-gradient-to-br from-slate-900/80 to-purple-900/20 backdrop-blur-lg rounded-2xl p-6 border border-purple-500/20 hover:border-purple-500/50 transition-all transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500/20 h-full flex flex-col cursor-pointer group"
+                  >
+                    {/* Category placeholder icon */}
+                    <div className="mb-4 h-32 rounded-xl bg-gradient-to-br from-slate-800/80 to-purple-900/30 border border-purple-500/10 flex items-center justify-center overflow-hidden">
+                      {project.previewVideo ? (
+                        <video
+                          src={project.previewVideo}
+                          className="w-full h-full object-cover rounded-xl"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      ) : coverImage ? (
+                        <img src={coverImage} alt={project.title} className="w-full h-full object-cover rounded-xl" />
+                      ) : (
+                        <div className="text-center">
+                          {project.category === 'ML / AI' && <Brain size={40} className="mx-auto text-purple-400/60 mb-1" />}
+                          {project.category === 'GenAI / NLP' && <Cpu size={40} className="mx-auto text-cyan-400/60 mb-1" />}
+                          {project.category === 'Data Analysis' && <BarChart3 size={40} className="mx-auto text-pink-400/60 mb-1" />}
+                          <p className="text-xs text-gray-500">{project.category}</p>
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
 
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-lg font-bold text-purple-400 flex-1 group-hover:text-cyan-400 transition-colors">{project.title}</h3>
@@ -87,7 +98,7 @@ const Projects = ({ projects }) => {
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.slice(0, 4).map((tech, idx) => (
+                  {project.tech.map((tech, idx) => (
                     <span key={idx} className="px-2 py-1 bg-purple-500/10 text-purple-300 rounded text-xs border border-purple-500/20">
                       {tech}
                     </span>
@@ -96,23 +107,37 @@ const Projects = ({ projects }) => {
 
                 <div className="flex items-center justify-between mt-auto pt-3 border-t border-purple-500/10">
                   <span className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">Click to expand</span>
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex items-center gap-1 text-xs text-purple-400 hover:text-cyan-400 transition-colors"
-                    >
-                      <ExternalLink size={14} />
-                      GitHub
-                    </a>
-                  )}
+                  <div className="flex items-center gap-3">
+                    {project.website && (
+                      <a
+                        href={project.website}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1 text-xs text-cyan-300 hover:text-cyan-200 transition-colors"
+                      >
+                        <ExternalLink size={14} />
+                        Website
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1 text-xs text-purple-400 hover:text-cyan-400 transition-colors"
+                      >
+                        <ExternalLink size={14} />
+                        GitHub
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
-            </ScrollReveal>
-          ))}
-        </div>
+                </ScrollReveal>
+              )})}
+            </div>
 
         {visibleProjects < filtered.length && (
           <div className="text-center mt-12">
