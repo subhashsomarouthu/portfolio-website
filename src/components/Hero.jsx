@@ -45,7 +45,7 @@ const Hero = ({ scrollToSection }) => {
               <img
                 src="/profile_photo.png"
                 alt="Subhash Pavan Chakravarthy"
-                className="w-full h-full rounded-full object-cover"
+                className="w-full h-full rounded-full object-cover object-[50%_22%]"
               />
             </div>
           </div>
