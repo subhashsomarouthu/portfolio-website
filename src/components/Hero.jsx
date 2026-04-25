@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ChevronDown, Download } from 'lucide-react';
 
-const TITLES = ['Data Analyst', 'Data Scientist', 'ML Engineer', 'AI Engineer', 'Data Engineer'];
+const TITLES = ['Data Engineer', 'Azure Data Engineer'];
 
 const Hero = ({ scrollToSection }) => {
   const [titleIndex, setTitleIndex] = useState(0);
@@ -75,8 +75,8 @@ const Hero = ({ scrollToSection }) => {
             </div>
 
             <p className="text-lg text-gray-400 mb-8 max-w-2xl">
-              2+ years transforming data into insights that drive revenue, reduce costs, and optimize operations.
-              Specialized in analytics, machine learning, and business intelligence.
+              4+ years building scalable ETL and ELT pipelines on Azure using ADF, Databricks, and Synapse Analytics.
+              Specialized in ingestion, transformation, warehousing, and production pipeline reliability.
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-8">
@@ -87,7 +87,7 @@ const Hero = ({ scrollToSection }) => {
                 View Projects
               </button>
               <a
-                href="/subhashsomarouthu_resume.pdf"
+                href="/Subhash_Pavan_Chakravarthy_Resume.pdf"
                 download
                 className="px-6 py-3 border-2 border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all inline-flex items-center gap-2"
               >
@@ -111,7 +111,7 @@ const Hero = ({ scrollToSection }) => {
               <a href="https://linkedin.com/in/subhash-somarouthu" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-400 transition-colors">
                 <Linkedin size={24} />
               </a>
-              <a href="mailto:pavanchakravarthy2000@gmail.com" className="text-gray-400 hover:text-purple-400 transition-colors">
+              <a href="mailto:subhashpavan2000@gmail.com" className="text-gray-400 hover:text-purple-400 transition-colors">
                 <Mail size={24} />
               </a>
             </div>

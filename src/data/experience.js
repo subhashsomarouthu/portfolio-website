@@ -2,39 +2,39 @@ import { TrendingUp, Target, Users, Brain, Zap, Database } from 'lucide-react';
 
 export const experience = [
   {
-    company: "Quinte Financial Technologies",
-    role: "Data Analyst",
-    period: "Feb 2024 - Apr 2024",
-    location: "India",
+    company: "TELUS",
+    role: "Data Engineer",
+    period: "Aug 2025 - Present",
+    location: "Toronto, Canada",
     achievements: [
-      { icon: TrendingUp, text: "Translated business requirements into applied analytics and ML-driven insights through SQL and ETL pipelines" },
-      { icon: Target, text: "Developed 2 interactive Tableau dashboards, reducing reporting time by 30% and improving stakeholder access" },
-      { icon: Users, text: "Collaborated with 2+ cross-functional stakeholders, increasing project delivery efficiency by 20%" }
+      { icon: Database, text: "Built Azure data pipelines in ADF to ingest data from Azure SQL, ADLS, Blob Storage, and REST APIs into Data Lake Gen2 with production-grade error handling." },
+      { icon: Target, text: "Developed parameterized pipeline frameworks with Key Vault-backed connections, reducing new-source onboarding time by about 30%." },
+      { icon: TrendingUp, text: "Implemented SCD Type 1 and Type 2 logic in Databricks and designed incremental load patterns for Synapse dimension tables, improving pipeline scalability and failure visibility." }
     ],
-    tech: ["SQL", "Tableau", "Python", "ETL Pipelines"]
+    tech: ["Azure Data Factory", "Databricks", "PySpark", "Python", "Synapse Analytics", "ADLS", "PolyBase", "Azure DevOps", "Azure SQL"]
   },
   {
-    company: "AlmaBetter",
-    role: "Data Science Intern",
-    period: "Feb 2023 - Jan 2024",
-    location: "India",
+    company: "Moneris",
+    role: "Data Engineer",
+    period: "May 2024 - Aug 2025",
+    location: "Toronto, Canada",
     achievements: [
-      { icon: Brain, text: "Mentored 200+ learners by resolving technical queries, raising learner satisfaction scores by 20%" },
-      { icon: Target, text: "Led 2 A/B experiments on UI/UX designs, increasing engagement by 25% and conversions by 18%" },
-      { icon: Zap, text: "Built and evaluated 5+ ML models, improving prediction accuracy and business insights by 15%" }
+      { icon: Zap, text: "Migrated data extraction workflows from Mainframe, SQL Server, and IBM DB2 into Azure, reducing downstream analytics processing time by 35%." },
+      { icon: Brain, text: "Architected multi-source ELT workflows into Azure Data Lake and Synapse, supporting 10+ BI reports across 5 business units." },
+      { icon: Users, text: "Optimized Azure Databricks performance, migrated warehouse objects from Teradata to Snowflake, and established Azure DevOps CI/CD pipelines to speed up deployments by 15%." }
     ],
-    tech: ["Python", "SQL", "scikit-learn", "TensorFlow", "A/B Testing"]
+    tech: ["Azure Data Factory", "Databricks", "PySpark", "Python", "Spark SQL", "Azure Data Lake", "Snowflake", "Teradata", "Azure SQL", "Power BI"]
   },
   {
     company: "Accenture",
-    role: "Application Development Associate",
-    period: "Oct 2021 - Feb 2023",
+    role: "Data Engineer",
+    period: "Aug 2021 - Feb 2023",
     location: "India",
     achievements: [
-      { icon: Database, text: "Delivered 3 enterprise projects analyzing operational data using SQL and Excel" },
-      { icon: Zap, text: "Executed 10+ end-to-end service validation cycles, reducing recurring defects by 25%" },
-      { icon: TrendingUp, text: "Coordinated testing for Telefonica-Virgin Media O2 integration, improving issue resolution by 15%" }
+      { icon: Database, text: "Improved Azure SQL and SQL Server query efficiency by 15% through data modeling, schema optimization, and workflow tuning." },
+      { icon: TrendingUp, text: "Migrated on-prem SQL Server databases to Azure Synapse Analytics and Azure SQL DB with validated data integrity and minimal cutover downtime." },
+      { icon: Users, text: "Optimized ADF V2 pipeline performance, secured critical credentials with Key Vault linked services, and led stakeholder discussions to align delivery with business requirements." }
     ],
-    tech: ["SQL", "Excel", "Jira", "Service Testing"]
+    tech: ["SQL Server", "Python", "Azure Synapse Analytics", "Azure Data Factory", "Azure SQL", "ADLS", "Azure Analysis Services"]
   }
 ];

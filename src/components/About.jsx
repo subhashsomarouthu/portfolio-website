@@ -2,10 +2,10 @@ import { Briefcase, Code, Award, TrendingUp } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const stats = [
-  { icon: Briefcase, value: '2+', label: 'Years of Experience', gradient: 'from-purple-900/40', border: 'border-purple-500', iconColor: 'text-purple-400' },
-  { icon: Code, value: '15+', label: 'Projects Completed', gradient: 'from-cyan-900/40', border: 'border-cyan-500', iconColor: 'text-cyan-400' },
+  { icon: Briefcase, value: '4+', label: 'Years of Experience', gradient: 'from-purple-900/40', border: 'border-purple-500', iconColor: 'text-purple-400' },
+  { icon: Code, value: '3', label: 'Data Engineering Roles', gradient: 'from-cyan-900/40', border: 'border-cyan-500', iconColor: 'text-cyan-400' },
   { icon: Award, value: '4', label: 'Certifications Earned', gradient: 'from-pink-900/40', border: 'border-pink-500', iconColor: 'text-pink-400' },
-  { icon: TrendingUp, value: '90%', label: 'Skill Accuracy', gradient: 'from-indigo-900/40', border: 'border-indigo-500', iconColor: 'text-indigo-400' },
+  { icon: TrendingUp, value: '15+', label: 'Projects Completed', gradient: 'from-indigo-900/40', border: 'border-indigo-500', iconColor: 'text-indigo-400' },
 ];
 
 const About = () => {
@@ -35,10 +35,10 @@ const About = () => {
         <ScrollReveal>
           <div className="bg-gradient-to-br from-slate-900/60 to-purple-900/30 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/20">
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
-              I'm a <span className="text-purple-400 font-semibold">Data Analyst</span> with 2+ years of experience transforming complex data into actionable insights that drive business growth. My work spans the full data lifecycle — from <span className="text-cyan-400 font-semibold">building ETL pipelines and data models</span> to <span className="text-cyan-400 font-semibold">developing machine learning solutions and interactive dashboards</span> — giving me a unique ability to bridge the gap between raw data and strategic decisions.
+              I'm a <span className="text-purple-400 font-semibold">Data Engineer</span> with 4+ years of experience building scalable data platforms on <span className="text-cyan-400 font-semibold">Microsoft Azure</span>. My work focuses on reliable ETL and ELT delivery using <span className="text-cyan-400 font-semibold">Azure Data Factory, Databricks, Synapse Analytics, and Azure Data Lake</span>, covering ingestion, transformation, warehousing, orchestration, and monitoring.
             </p>
             <p className="text-lg text-gray-300 leading-relaxed">
-              From analyzing 20+ datasets with 15% higher accuracy at Quinte Financial Technologies to processing 100k+ records and improving campaign targeting by 20% at AlmaBetter, I deliver <span className="text-purple-400 font-semibold">data-driven solutions</span> that make a measurable impact. With expertise in <span className="text-cyan-400 font-semibold">Python, SQL, machine learning, NLP, and cloud-based systems</span>, I'm seeking opportunities where analytical rigor meets engineering excellence.
+              Across TELUS, Moneris, and Accenture, I have delivered production-grade solutions including <span className="text-purple-400 font-semibold">incremental load frameworks, SCD Type 1 and 2 processing, cloud migrations, CI/CD deployment pipelines, and performance optimization</span>. I work primarily with <span className="text-cyan-400 font-semibold">SQL, Python, PySpark, Spark SQL, Delta Lake, and Azure-native services</span> to improve data availability, reduce processing time, and support enterprise reporting at scale.
             </p>
           </div>
         </ScrollReveal>

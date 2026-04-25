@@ -50,18 +50,18 @@ const Contact = () => {
               <div className="bg-gradient-to-br from-slate-900/60 to-purple-900/20 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/20">
                 <h3 className="text-2xl font-bold mb-6 text-purple-400">Get In Touch</h3>
                 <p className="text-gray-300 mb-8">
-                  I'm currently seeking new opportunities in data science and analytics.
-                  Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                  I'm currently seeking new opportunities in data engineering and cloud data platforms.
+                  Whether you have a question or just want to connect, I'll try my best to get back to you.
                 </p>
 
                 <div className="space-y-4">
-                  <a href="mailto:pavanchakravarthy2000@gmail.com" className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group">
+                  <a href="mailto:subhashpavan2000@gmail.com" className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors group">
                     <div className="bg-purple-500/20 p-3 rounded-lg group-hover:bg-purple-500/30 transition-colors">
                       <Mail size={24} />
                     </div>
                     <div>
                       <p className="text-sm text-gray-400">Email</p>
-                      <p className="font-semibold">pavanchakravarthy2000@gmail.com</p>
+                      <p className="font-semibold">subhashpavan2000@gmail.com</p>
                     </div>
                   </a>
 

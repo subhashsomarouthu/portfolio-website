@@ -55,27 +55,32 @@ const Skills = ({ skills }) => {
           </h2>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
-            <ScrollReveal key={skill.name} delay={index % 3 * 80}>
-              <div className="bg-gradient-to-br from-slate-900/60 to-purple-900/20 backdrop-blur-lg rounded-xl p-6 border border-purple-500/20 hover:border-purple-500/40 transition-all">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-lg font-semibold text-white">{skill.name}</span>
-                  <span className="text-sm text-purple-400">{skill.level}%</span>
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {skills.map((group, index) => (
+            <ScrollReveal key={group.category} delay={index % 3 * 80}>
+              <div className="bg-gradient-to-br from-slate-900/60 to-purple-900/20 backdrop-blur-lg rounded-xl p-6 border border-purple-500/20 hover:border-purple-500/40 transition-all h-full">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-white">{group.category}</h3>
+                  <span className="text-xs text-purple-300 bg-purple-500/10 border border-purple-500/20 rounded-full px-2 py-1">
+                    {group.items.length} skills
+                  </span>
                 </div>
-                <div className="w-full bg-slate-800/50 rounded-full h-3 overflow-hidden">
-                  <div
-                    className="bg-gradient-to-r from-purple-500 to-cyan-500 h-full rounded-full transition-all duration-1000 ease-out"
-                    style={{ width: `${skill.level}%` }}
-                  />
+
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="px-3 py-1.5 bg-slate-800/70 text-gray-200 rounded-lg text-sm border border-cyan-500/15"
+                    >
+                      {item}
+                    </span>
+                  ))}
                 </div>
-                <p className="text-xs text-gray-400 mt-2">{skill.category}</p>
               </div>
             </ScrollReveal>
           ))}
         </div>
 
-        {/* Certifications */}
         <div className="mt-16">
           <ScrollReveal>
             <h3 className="text-3xl font-bold text-center mb-8 text-cyan-400">Certifications</h3>
@@ -129,7 +134,6 @@ const Skills = ({ skills }) => {
           </div>
         </div>
 
-        {/* Tools */}
         <div className="mt-10">
           <ScrollReveal>
             <div className="bg-gradient-to-br from-slate-900/60 to-purple-900/20 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/20">
@@ -137,19 +141,19 @@ const Skills = ({ skills }) => {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="flex items-center gap-3">
                   <Database className="text-cyan-400" size={20} />
-                  <span className="text-gray-300 text-sm">Git & GitHub</span>
+                  <span className="text-gray-300 text-sm">ADF & Synapse</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Code className="text-purple-400" size={20} />
-                  <span className="text-gray-300 text-sm">Docker & Kubernetes</span>
+                  <span className="text-gray-300 text-sm">Databricks & PySpark</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <BarChart3 className="text-cyan-400" size={20} />
-                  <span className="text-gray-300 text-sm">Agile/Scrum</span>
+                  <span className="text-gray-300 text-sm">Power BI & Tableau</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Brain className="text-purple-400" size={20} />
-                  <span className="text-gray-300 text-sm">Azure & GCP</span>
+                  <span className="text-gray-300 text-sm">Azure DevOps & CI/CD</span>
                 </div>
               </div>
             </div>

@@ -49,7 +49,6 @@ const Experience = ({ experience, education }) => {
           ))}
         </div>
 
-        {/* Education */}
         <div className="mt-16">
           <ScrollReveal>
             <h3 className="text-3xl font-bold text-center mb-8 text-cyan-400">Education</h3>
@@ -61,7 +60,10 @@ const Experience = ({ experience, education }) => {
                   <GraduationCap size={32} className="text-cyan-400 mb-4" />
                   <h4 className="text-xl font-bold mb-2">{edu.degree}</h4>
                   <p className="text-gray-300 mb-1">{edu.school}</p>
-                  <p className="text-gray-400 text-sm mb-2">{edu.location} • {edu.year}</p>
+                  <p className="text-gray-400 text-sm mb-2">
+                    {edu.location}
+                    {edu.year && edu.school !== 'Loyalist College' ? ` • ${edu.year}` : ''}
+                  </p>
 
                   {edu.courses && (
                     <div className="mb-3">

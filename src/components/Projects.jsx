@@ -29,7 +29,7 @@ const Projects = ({ projects }) => {
             </span>
           </h2>
           <p className="text-center text-gray-400 mb-8 text-lg">
-            Each project demonstrates measurable business impact using the STAR methodology
+            A mix of production systems, data workflows, analytics solutions, and applied AI projects with measurable business impact
           </p>
         </ScrollReveal>
 
