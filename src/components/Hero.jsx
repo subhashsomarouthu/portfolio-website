@@ -75,7 +75,7 @@ const Hero = ({ scrollToSection }) => {
             </div>
 
             <p className="text-lg text-gray-400 mb-8 max-w-2xl">
-              4+ years building scalable ETL and ELT pipelines on Azure using ADF, Databricks, and Synapse Analytics.
+              5 years building scalable ETL and ELT pipelines on Azure using ADF, Databricks, and Synapse Analytics.
               Specialized in ingestion, transformation, warehousing, and production pipeline reliability.
             </p>
 

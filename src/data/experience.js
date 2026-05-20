@@ -16,7 +16,7 @@ export const experience = [
   {
     company: "Moneris",
     role: "Data Engineer",
-    period: "May 2024 - Aug 2025",
+    period: "May 2023 - Aug 2025",
     location: "Toronto, Canada",
     achievements: [
       { icon: Zap, text: "Migrated data extraction workflows from Mainframe, SQL Server, and IBM DB2 into Azure, reducing downstream analytics processing time by 35%." },
