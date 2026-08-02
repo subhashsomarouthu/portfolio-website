@@ -1,1 +1,13 @@
-[]
+[
+  {
+    "name": "Enterprise-Azure-Lakehouse-Project",
+    "description": "Production-style Azure Lakehouse project with ADF incremental ingestion, ADLS Gen2, Databricks Medallion architecture, Delta Lake, Unity Catalog, DQ checks, schema drift handling, Gold star schema/SCD2, Terraform, and GitHub Actions CI/CD.",
+    "url": "https://github.com/subhashsomarouthu/Enterprise-Azure-Lakehouse-Project",
+    "homepage": "",
+    "language": "Python",
+    "stars": 0,
+    "topics": [],
+    "updatedAt": "2026-08-02T12:01:24Z",
+    "createdAt": "2026-07-31T23:38:03Z"
+  }
+]
