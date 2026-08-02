@@ -23,7 +23,7 @@ const Portfolio = () => {
     (!p.github || !manualGithub.has(p.github)) &&
     (!p.title || !manualTitles.has(p.title.toLowerCase()))
   );
-  const mergedProjects = [...projects, ...autoDeduped];
+  const mergedProjects = [...autoDeduped, ...projects];
 
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
