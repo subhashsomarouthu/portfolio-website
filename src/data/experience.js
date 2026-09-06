@@ -2,39 +2,27 @@ import { TrendingUp, Target, Users, Brain, Zap, Database } from 'lucide-react';
 
 export const experience = [
   {
-    company: "TELUS",
-    role: "Data Engineer",
-    period: "Aug 2025 - Present",
+    company: "Johnson & Johnson",
+    role: "Supply Chain Specialist",
+    period: "Jan 2025 - Present",
     location: "Toronto, Canada",
     achievements: [
-      { icon: Database, text: "Built Azure data pipelines in ADF to ingest data from Azure SQL, ADLS, Blob Storage, and REST APIs into Data Lake Gen2 with production-grade error handling." },
-      { icon: Target, text: "Developed parameterized pipeline frameworks with Key Vault-backed connections, reducing new-source onboarding time by about 30%." },
-      { icon: TrendingUp, text: "Implemented SCD Type 1 and Type 2 logic in Databricks and designed incremental load patterns for Synapse dimension tables, improving pipeline scalability and failure visibility." }
+      { icon: Target, text: "Steered the planning phase of 3 strategic supply chain improvement projects, collaborating with stakeholders to guarantee seamless transitions and delivering $35,000 in cost savings per project." },
+      { icon: Database, text: "Orchestrated automated Power BI reports using SQL to query transactional databases, visualizing supply chain KPIs like on-time delivery and inventory turns — cutting manual reporting time by 12 hours weekly." },
+      { icon: TrendingUp, text: "Piloted a comprehensive compliance audit across the supply chain, elevating scores from 78/100 to 92/100, and negotiated vendor/carrier contracts to achieve a 10% reduction in freight expenses." }
     ],
-    tech: ["Azure Data Factory", "Databricks", "PySpark", "Python", "Synapse Analytics", "ADLS", "PolyBase", "Azure DevOps", "Azure SQL"]
+    tech: ["SQL", "Power BI", "SAP", "Excel (Advanced)", "Stakeholder Management", "Procurement", "Logistics Management"]
   },
   {
-    company: "Moneris",
-    role: "Data Engineer",
-    period: "May 2023 - Aug 2025",
+    company: "Metro Supply Chain Inc.",
+    role: "Supply Chain Specialist",
+    period: "May 2021 – Mar 2024",
     location: "Toronto, Canada",
     achievements: [
-      { icon: Zap, text: "Migrated data extraction workflows from Mainframe, SQL Server, and IBM DB2 into Azure, reducing downstream analytics processing time by 35%." },
-      { icon: Brain, text: "Architected multi-source ELT workflows into Azure Data Lake and Synapse, supporting 10+ BI reports across 5 business units." },
-      { icon: Users, text: "Optimized Azure Databricks performance, migrated warehouse objects from Teradata to Snowflake, and established Azure DevOps CI/CD pipelines to speed up deployments by 15%." }
+      { icon: Zap, text: "Revitalized end-to-end supply chain operations from procurement to customer delivery, earning recognition from the VP of Operations for reducing delivery times by 20 hours." },
+      { icon: Brain, text: "Analysed supply chain data using SQL to forecast demand and manage inventory levels, resulting in a 20% reduction in stockouts and improved customer satisfaction." },
+      { icon: Users, text: "Directed cross-functional teams to build automated Tableau dashboards from real-time data, improving data accuracy for 95% of key metrics and reducing reporting time by 6 hours per person." }
     ],
-    tech: ["Azure Data Factory", "Databricks", "PySpark", "Python", "Spark SQL", "Azure Data Lake", "Snowflake", "Teradata", "Azure SQL", "Power BI"]
-  },
-  {
-    company: "Accenture",
-    role: "Data Engineer",
-    period: "Aug 2021 - Feb 2023",
-    location: "India",
-    achievements: [
-      { icon: Database, text: "Improved Azure SQL and SQL Server query efficiency by 15% through data modeling, schema optimization, and workflow tuning." },
-      { icon: TrendingUp, text: "Migrated on-prem SQL Server databases to Azure Synapse Analytics and Azure SQL DB with validated data integrity and minimal cutover downtime." },
-      { icon: Users, text: "Optimized ADF V2 pipeline performance, secured critical credentials with Key Vault linked services, and led stakeholder discussions to align delivery with business requirements." }
-    ],
-    tech: ["SQL Server", "Python", "Azure Synapse Analytics", "Azure Data Factory", "Azure SQL", "ADLS", "Azure Analysis Services"]
+    tech: ["SQL", "Tableau", "WMS", "Excel", "Demand Forecasting", "Inventory Management", "Cross-Functional Leadership"]
   }
 ];

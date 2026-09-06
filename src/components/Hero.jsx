@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Github, Linkedin, Mail, ChevronDown, Download } from 'lucide-react';
 
-const TITLES = ['Data Engineer', 'Azure Data Engineer'];
+const TITLES = ['Supply Chain Specialist', 'Supply Chain Analyst'];
 
 const Hero = ({ scrollToSection }) => {
   const [titleIndex, setTitleIndex] = useState(0);
@@ -75,8 +75,8 @@ const Hero = ({ scrollToSection }) => {
             </div>
 
             <p className="text-lg text-gray-400 mb-8 max-w-2xl">
-              5 years building scalable ETL and ELT pipelines on Azure using ADF, Databricks, and Synapse Analytics.
-              Specialized in ingestion, transformation, warehousing, and production pipeline reliability.
+              4+ years optimizing end-to-end supply chain operations using SQL, Power BI, and ERP systems.
+              Specialized in demand forecasting, inventory management, logistics, and data-driven process improvement.
             </p>
 
             <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-8">
@@ -87,7 +87,7 @@ const Hero = ({ scrollToSection }) => {
                 View Projects
               </button>
               <a
-                href="/Subhash_Pavan_Chakravarthy_Resume.pdf"
+                href="/Subhash_Pavan_Chakravarthy_Somarouthu_Resume.pdf"
                 download
                 className="px-6 py-3 border-2 border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all inline-flex items-center gap-2"
               >
